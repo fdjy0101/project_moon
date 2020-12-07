@@ -1,0 +1,18 @@
+- yarn add LIST
+* react-icons
+* react-redux
+* react-router
+* react-router-dom
+* redux-saga
+* node-sass
+* sass-loader
+
+- 폴더구조
+component - 작은기능들
+    post - 게시물 관련 컴포넌트들
+    user - 사용자 관련 컴포넌트들
+container - 기능들로 만드는 섹션(section)
+
+pages - 섹션으로 이루어진 페이지
+
+store - 리덕스
