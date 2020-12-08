@@ -1,0 +1,16 @@
+table
+- serviceUser
+
+    "idx": autoIndex NOT NULL,
+    "userName": varchar(30) NOT NULL,
+    "userNickname":  varchar(30) NOT NULL,
+    "userAge": int(1) NOT NULL,
+    "connectSNS": "kakao" NOT NULL,
+    "representativeImage": varchar(100) NOT NULL,
+    "joinDate": dateTime NOT NULL,
+    "lastActivityTime": dateTime NOT NULL,
+    "writtenCount": int(1),
+    "item": int(1),
+    "like": int(1),
+    "likeMe": int(1),
+    "roomCode": text

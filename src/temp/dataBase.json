@@ -1,0 +1,19 @@
+{
+    "serviceUser": [
+        {
+            "idx": 1,
+            "userName": "문찬영",
+            "userNickname": "찬0",
+            "userAge": 19,
+            "connectSNS": "kakao",
+            "representativeImage": "userID_yyyy_mm_dd_his",
+            "joinDate": "yyyy-mm-dd h:i:s",
+            "lastActivityTime": "yyyy-mm-dd h:i:s",
+            "writtenCount": 30,
+            "item": 40,
+            "like": 40,
+            "likeMe": 40,
+            "roomCode":"#etc"
+        }
+    ]
+}
