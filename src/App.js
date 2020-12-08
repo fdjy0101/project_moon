@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, Link } from 'react-router-dom';
 
 import Index from './pages/Index';
-
+import style from './App.scss'
 const App = () => {
   return (
     <div>
