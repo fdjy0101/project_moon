@@ -1,0 +1,14 @@
+.writeZone{
+    position: relative;
+    height: 300px;
+    width: 960px;
+    background-color: #9ba7a3;
+    .activeCursor{
+
+        border-left: 1px solid #000;
+        border-right: none;
+        width: 0;
+        position: absolute;
+        pointer-events: none;
+    }
+}
