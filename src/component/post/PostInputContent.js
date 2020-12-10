@@ -9,6 +9,7 @@ const PostInputContent = () => {
     const [cursorState, setCursorState] = useState(true);
     const [ani, setAni] = useState(false);
     const [contentText, setContentText] = useState('');
+    let koreaText = '';
     let korea = false;
     let ctrl = false;
 
@@ -50,16 +51,15 @@ const PostInputContent = () => {
                     textareaRef.current.value += '<makeBR/>';
                     setContentText(textareaRef.current.value)
                 } else {
-                   
-                    if(korea){
-                        if(event.key.match(/[a-zA-Z]/g)){
-                            textareaRef.current.value += keyMap(event.key);
-                           
-                        }else{
+
+                    if (korea) {
+                        if (event.key.match(/[a-zA-Z]/g)) {
+                            koreaText += keyMap(event.key);
+                        } else {
                             textareaRef.current.value += event.key;
                         }
-                        setContentText( textareaRef.current.value)
-                    }else{
+                        setContentText(textareaRef.current.value)
+                    } else {
                         textareaRef.current.value += event.key;
                     }
                     setContentText(textareaRef.current.value);
@@ -76,11 +76,16 @@ const PostInputContent = () => {
                 }
 
                 if ((event.keyCode == 17 || event.keyCode == 91)) event.preventDefault();
-                   
+
             }
             const handleKeyDown = (event) => {
-                if(event.keyCode == 21){
+                if (event.keyCode == 21) {
                     korea = !korea;
+                    if (koreaText != '') {
+                        textareaRef.current.value +=koreaText;
+                        setContentText( textareaRef.current.value);
+                        koreaText = '';
+                    }
                 }
                 if (ctrl) {
                     if (event.keyCode == 86) {
@@ -91,8 +96,8 @@ const PostInputContent = () => {
                         setContentText(textareaRef.current.value)
                     }
                     event.preventDefault();
-                }else if(event.code =='Backspace'){
-                    textareaRef.current.value = textareaRef.current.value.slice(0,-1);
+                } else if (event.code == 'Backspace') {
+                    textareaRef.current.value = textareaRef.current.value.slice(0, -1);
                     setContentText(textareaRef.current.value)
                 }
 
@@ -137,3 +142,18 @@ const PostInputContent = () => {
 }
 
 export default PostInputContent; 
+
+
+
+/*
+텍스트 에디터 원리
+
+빈 텍스트 에리아 한개를 
+포지션 앱솔루트로 뛰우고
+마우스 커서가 위치하는곳으로 보냄
+
+마우스 클릭을 하는 등 커서위치가 변하면 텍스트에리아의 값이 공백('' ) 으로 변함
+마우스 드래그를 하면 선택된 글자들이 택스트에리아에 들어감
+
+
+*/
